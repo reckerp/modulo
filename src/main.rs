@@ -85,8 +85,16 @@ fn main() {
 
             println!("{} % {} = {}", a, b, a % b);
         }
+        "--help" => {
+            println!("Usage: mod <subcommand> <args>");
+            println!("Subcommands:");
+            println!("  --gcd <a> <modulus> - Compute the GCD of two numbers");
+            println!("  --egcd <a> <modulus> - Compute the Extended GCD of two numbers");
+            println!("  --inv <a> <modulus> - Compute the modular inverse of a number");
+            println!("  - <a> <modulus> - Compute the modulo of two numbers");
+        }
         _ => {
-            eprintln!("Invalid subcommand. Valid options are: --gcd, --egcd, --inv and - for modulo operations");
+            eprintln!("Invalid subcommand. Try --help for more information.");
             process::exit(1);
         }
     }
